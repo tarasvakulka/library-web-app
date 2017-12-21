@@ -24366,6 +24366,7 @@ var BookList = function (_React$Component) {
             }).then(function (data) {
                 return console.log(data);
             });
+            console.log(a);
         }
     }, {
         key: "render",
