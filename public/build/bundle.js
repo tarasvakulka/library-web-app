@@ -24389,7 +24389,7 @@ var BookList = function (_React$Component) {
             fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(function (response) {
                 return response.json();
             }).then(function (data) {
-                return _this2.setState({ books: data });
+                return _this2.setState({ authors: data });
             });
             //this.setState({books: booksdata});
             //this.setState({authors: authorsdata})
