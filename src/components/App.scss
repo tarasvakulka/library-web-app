@@ -1,0 +1,50 @@
+li {
+    list-style-type: none;
+}
+a, a:hover {
+    text-decoration: none;
+}
+#mount-poin {
+    height: 100%;
+}
+.App {
+    height: 100%;
+}
+@media (max-width: 576px) {
+    
+   
+}
+
+@media (min-width: 768px) {
+
+    .navbar-right {
+        font-size: 1.15em;
+    }
+    .navbar-brand > img {
+        height: 40px;
+    }
+    
+   
+}
+
+@media (min-width: 992px) {
+    .navbar-right {
+        font-size: 1.4em;
+    }
+    .navbar-brand > img {
+        height: 60px;
+    }
+    .navbar-brand {
+        padding: 5px 10px;
+    }
+    
+    
+}
+
+@media (min-width: 1200px) {
+    .navbar-right {
+        font-size: 1.5em;
+    }
+   
+    
+}

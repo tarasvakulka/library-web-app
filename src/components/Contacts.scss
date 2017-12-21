@@ -1,0 +1,19 @@
+#contacts .fill{
+    height: 90vh;
+}
+#contacts a {
+    color: black;
+}
+#contacts h5 {
+    text-transform: uppercase;
+}
+.icon-size {
+    height: 30px;
+    width: 33px;
+}
+@media screen and (max-width: 1250px) {
+    #contacts iframe {
+        height: 100%;
+        width: 100%;
+    }
+}
