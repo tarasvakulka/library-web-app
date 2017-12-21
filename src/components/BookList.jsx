@@ -1,8 +1,5 @@
 import React from "react";
 import "./BookList.scss";
-//import BookListItem from "./BookListItem.jsx";
-import booksdata from "../books.json";
-import authorsdata from "../authors.json";
 
 class BookList extends React.Component {
     constructor(props) {
@@ -14,10 +11,10 @@ class BookList extends React.Component {
         this.getAuthorId = this.getAuthorId.bind(this); 
     }
     componentWillMount() {
-        //fetch("./src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
-        //fetch("./src/authors.json").then(response => response.json()).then(data => this.setState({books: data}));
-        this.setState({books: booksdata});
-        this.setState({authors: authorsdata})
+        fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
+        fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(response => response.json()).then(data => this.setState({books: data}));
+        //this.setState({books: booksdata});
+        //this.setState({authors: authorsdata})
     
     }
     getAuthorId(authorName) {

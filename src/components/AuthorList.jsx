@@ -13,8 +13,8 @@ class AuthorList extends React.Component {
         this.getBookId = this.getBookId.bind(this);
     }
     componentWillMount() {
-        //fetch("./src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
-        //fetch("./src/authors.json").then(response => response.json()).then(data => this.setState({books: data}));
+        //fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
+        //fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(response => response.json()).then(data => this.setState({books: data}));
         this.setState({books: booksdata});
         this.setState({authors: authorsdata})
     

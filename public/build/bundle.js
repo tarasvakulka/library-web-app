@@ -1392,6 +1392,18 @@ var locationsAreEqual = function locationsAreEqual(a, b) {
 
 /***/ }),
 /* 15 */
+/***/ (function(module, exports) {
+
+module.exports = [{"id":"1","name":"The Adventures of Tom Sawyer","authors":["Mark Twain"],"genre":"novel","description":"Mark Twain's novel is one of the first American literary masterpieces, embracing local vernacular to personify the unique small-town culture of this fledgling nation."},{"id":"2","name":"Let it Snow","authors":["John Green","Maureen Johnson"],"genre":"romance","description":"Sparkling white snowdrifts, beautiful presents wrapped in ribbons, and multicolored lights glittering in the night through the falling snow. A Christmas Eve snowstorm transforms one small town into a romantic haven, the kind you see only in movies."},{"id":"3","name":"Modern Romance","authors":["Aziz Ansari"],"genre":"humor","description":"At some point, every one of us embarks on a journey to find love. We meet people, date, get into and out of relationships, all with the hope of finding someone with whom we share a deep connection."},{"id":"4","name":"The Adventures of Huckleberry Finn","authors":["Mark Twain"],"genre":"novel","description":"Adventures of Huckleberry Finn is a novel by Mark Twain, first published in the United Kingdom in December 1884 and in the United States in February 1885. Commonly named among the Great American Novels, the work is among the first in major American literature to be written throughout in vernacular English"}]
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+module.exports = [{"id":"1","name":"Mark Twain","biography":"Born in in Florida, Missouri, The United States November 30, 1835. American author and humorist. He is noted for his novels Adventures of Huckleberry Finn (1885), called the Great American Novel, and The Adventures of Tom Sawyer (1876).","books":["The Adventures of Tom Sawyer","The Adventures of Huckleberry Finn"]},{"id":"2","name":"John Green","biography":"Born in Indianapolis, The United States. John Green's first novel, Looking for Alaska, won the 2006 Michael L. Printz Award presented by the American Library Association. His second novel, An Abundance of Katherines, was a 2007 Michael L. Printz Award Honor Book and a finalist for the Los Angeles Times Book Prize.","books":["Let it Snow"]},{"id":"3","name":"Aziz Ansari","biography":"Born in Columbia, South Carolina, The United States February 23, 1983. Aziz Ishmael Ansari is an American actor and comedian. He starred as Tom Haverford on the NBC show Parks and Recreation. Ansari began his career performing standup comedy in New York City.","books":["Modern Romance"]},{"id":"4","name":"Maureen Johnson","biography":"Born in Philadelphia, PA, The United States. Maureen knew from an early age she wanted to be a writer. She went to high school at an all-girls' Catholic school and graduated from University of Delaware with a degree in writing. She now lives and writes in New York City.","books":["Let it Snow"]}]
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1407,7 +1419,7 @@ var locationsAreEqual = function locationsAreEqual(a, b) {
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(9);
   var warning = __webpack_require__(13);
-  var ReactPropTypesSecret = __webpack_require__(16);
+  var ReactPropTypesSecret = __webpack_require__(18);
   var loggedTypeFailures = {};
 }
 
@@ -1458,7 +1470,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1477,7 +1489,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1561,7 +1573,7 @@ var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a
 };
 
 /***/ }),
-/* 18 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1652,18 +1664,18 @@ var createTransitionManager = function createTransitionManager() {
 exports.default = createTransitionManager;
 
 /***/ }),
-/* 19 */
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Router__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Router__ = __webpack_require__(22);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Router__["a" /* default */]);
 
 /***/ }),
-/* 20 */
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1782,7 +1794,7 @@ Router.childContextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Router);
 
 /***/ }),
-/* 21 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1859,7 +1871,7 @@ var matchPath = function matchPath(pathname) {
 /* harmony default export */ __webpack_exports__["a"] = (matchPath);
 
 /***/ }),
-/* 22 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1942,18 +1954,6 @@ var createTransitionManager = function createTransitionManager() {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (createTransitionManager);
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports) {
-
-module.exports = [{"id":"1","name":"The Adventures of Tom Sawyer","authors":["Mark Twain"],"genre":"novel","description":"Mark Twain's novel is one of the first American literary masterpieces, embracing local vernacular to personify the unique small-town culture of this fledgling nation."},{"id":"2","name":"Let it Snow","authors":["John Green","Maureen Johnson"],"genre":"romance","description":"Sparkling white snowdrifts, beautiful presents wrapped in ribbons, and multicolored lights glittering in the night through the falling snow. A Christmas Eve snowstorm transforms one small town into a romantic haven, the kind you see only in movies."},{"id":"3","name":"Modern Romance","authors":["Aziz Ansari"],"genre":"humor","description":"At some point, every one of us embarks on a journey to find love. We meet people, date, get into and out of relationships, all with the hope of finding someone with whom we share a deep connection."},{"id":"4","name":"The Adventures of Huckleberry Finn","authors":["Mark Twain"],"genre":"novel","description":"Adventures of Huckleberry Finn is a novel by Mark Twain, first published in the United Kingdom in December 1884 and in the United States in February 1885. Commonly named among the Great American Novels, the work is among the first in major American literature to be written throughout in vernacular English"}]
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports) {
-
-module.exports = [{"id":"1","name":"Mark Twain","biography":"Born in in Florida, Missouri, The United States November 30, 1835. American author and humorist. He is noted for his novels Adventures of Huckleberry Finn (1885), called the Great American Novel, and The Adventures of Tom Sawyer (1876).","books":["The Adventures of Tom Sawyer","The Adventures of Huckleberry Finn"]},{"id":"2","name":"John Green","biography":"Born in Indianapolis, The United States. John Green's first novel, Looking for Alaska, won the 2006 Michael L. Printz Award presented by the American Library Association. His second novel, An Abundance of Katherines, was a 2007 Michael L. Printz Award Honor Book and a finalist for the Los Angeles Times Book Prize.","books":["Let it Snow"]},{"id":"3","name":"Aziz Ansari","biography":"Born in Columbia, South Carolina, The United States February 23, 1983. Aziz Ishmael Ansari is an American actor and comedian. He starred as Tom Haverford on the NBC show Parks and Recreation. Ansari began his career performing standup comedy in New York City.","books":["Modern Romance"]},{"id":"4","name":"Maureen Johnson","biography":"Born in Philadelphia, PA, The United States. Maureen knew from an early age she wanted to be a writer. She went to high school at an all-girls' Catholic school and graduated from University of Delaware with a degree in writing. She now lives and writes in New York City.","books":["Let it Snow"]}]
 
 /***/ }),
 /* 25 */
@@ -2283,7 +2283,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Redirect", function() { return __WEBPACK_IMPORTED_MODULE_6__Redirect__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(36);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(21);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return __WEBPACK_IMPORTED_MODULE_8__Router__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(72);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StaticRouter", function() { return __WEBPACK_IMPORTED_MODULE_9__StaticRouter__["a"]; });
@@ -2637,7 +2637,7 @@ Link.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(23);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2917,7 +2917,7 @@ var emptyObject = __webpack_require__(12);
 var invariant = __webpack_require__(9);
 var warning = __webpack_require__(13);
 var emptyFunction = __webpack_require__(7);
-var checkPropTypes = __webpack_require__(15);
+var checkPropTypes = __webpack_require__(17);
 
 // TODO: this is special because it gets imported during build.
 
@@ -4627,7 +4627,7 @@ var shallowEqual = __webpack_require__(28);
 var containsNode = __webpack_require__(29);
 var focusNode = __webpack_require__(30);
 var emptyObject = __webpack_require__(12);
-var checkPropTypes = __webpack_require__(15);
+var checkPropTypes = __webpack_require__(17);
 var hyphenateStyleName = __webpack_require__(47);
 var camelizeStyleName = __webpack_require__(49);
 
@@ -20265,7 +20265,7 @@ exports.default = App;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(21);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -20338,8 +20338,8 @@ var invariant = __webpack_require__(9);
 var warning = __webpack_require__(13);
 var assign = __webpack_require__(8);
 
-var ReactPropTypesSecret = __webpack_require__(16);
-var checkPropTypes = __webpack_require__(15);
+var ReactPropTypesSecret = __webpack_require__(18);
+var checkPropTypes = __webpack_require__(17);
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -20885,7 +20885,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 var emptyFunction = __webpack_require__(7);
 var invariant = __webpack_require__(9);
-var ReactPropTypesSecret = __webpack_require__(16);
+var ReactPropTypesSecret = __webpack_require__(18);
 
 module.exports = function() {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -20955,11 +20955,11 @@ var _invariant = __webpack_require__(4);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _LocationUtils = __webpack_require__(17);
+var _LocationUtils = __webpack_require__(19);
 
 var _PathUtils = __webpack_require__(10);
 
-var _createTransitionManager = __webpack_require__(18);
+var _createTransitionManager = __webpack_require__(20);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
@@ -21260,7 +21260,7 @@ exports.default = createBrowserHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(21);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -21332,11 +21332,11 @@ var _invariant = __webpack_require__(4);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _LocationUtils = __webpack_require__(17);
+var _LocationUtils = __webpack_require__(19);
 
 var _PathUtils = __webpack_require__(10);
 
-var _createTransitionManager = __webpack_require__(18);
+var _createTransitionManager = __webpack_require__(20);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
@@ -21667,7 +21667,7 @@ exports.default = createHashHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(22);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -21740,9 +21740,9 @@ var _warning2 = _interopRequireDefault(_warning);
 
 var _PathUtils = __webpack_require__(10);
 
-var _LocationUtils = __webpack_require__(17);
+var _LocationUtils = __webpack_require__(19);
 
-var _createTransitionManager = __webpack_require__(18);
+var _createTransitionManager = __webpack_require__(20);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
@@ -22678,7 +22678,7 @@ Redirect.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(38);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -22982,7 +22982,7 @@ var createBrowserHistory = function createBrowserHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(38);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -23301,7 +23301,7 @@ var createHashHistory = function createHashHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(24);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -23486,7 +23486,7 @@ var createMemoryHistory = function createMemoryHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_history_PathUtils__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Router__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Router__ = __webpack_require__(22);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -23678,7 +23678,7 @@ StaticRouter.childContextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(23);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -23764,7 +23764,7 @@ Switch.propTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__ = __webpack_require__(23);
 // Written in this round about way for babel-transform-imports
 
 
@@ -24352,14 +24352,6 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(88);
 
-var _books = __webpack_require__(23);
-
-var _books2 = _interopRequireDefault(_books);
-
-var _authors = __webpack_require__(24);
-
-var _authors2 = _interopRequireDefault(_authors);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24367,8 +24359,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-//import BookListItem from "./BookListItem.jsx";
-
 
 var BookList = function (_React$Component) {
     _inherits(BookList, _React$Component);
@@ -24389,10 +24379,20 @@ var BookList = function (_React$Component) {
     _createClass(BookList, [{
         key: "componentWillMount",
         value: function componentWillMount() {
-            //fetch("./src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
-            //fetch("./src/authors.json").then(response => response.json()).then(data => this.setState({books: data}));
-            this.setState({ books: _books2.default });
-            this.setState({ authors: _authors2.default });
+            var _this2 = this;
+
+            fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                return _this2.setState({ books: data });
+            });
+            fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                return _this2.setState({ books: data });
+            });
+            //this.setState({books: booksdata});
+            //this.setState({authors: authorsdata})
         }
     }, {
         key: "getAuthorId",
@@ -24404,7 +24404,7 @@ var BookList = function (_React$Component) {
     }, {
         key: "render",
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
             console.log(this.state.books);
             return _react2.default.createElement(
@@ -24446,7 +24446,7 @@ var BookList = function (_React$Component) {
                                 book.authors.map(function (author) {
                                     return _react2.default.createElement(
                                         "a",
-                                        { id: "author-link", className: "pr-3", href: "#author/" + _this2.getAuthorId(author) },
+                                        { id: "author-link", className: "pr-3", href: "#author/" + _this3.getAuthorId(author) },
                                         author
                                     );
                                 })
@@ -24527,11 +24527,11 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(91);
 
-var _books = __webpack_require__(23);
+var _books = __webpack_require__(15);
 
 var _books2 = _interopRequireDefault(_books);
 
-var _authors = __webpack_require__(24);
+var _authors = __webpack_require__(16);
 
 var _authors2 = _interopRequireDefault(_authors);
 
@@ -24562,8 +24562,8 @@ var AuthorList = function (_React$Component) {
     _createClass(AuthorList, [{
         key: "componentWillMount",
         value: function componentWillMount() {
-            //fetch("./src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
-            //fetch("./src/authors.json").then(response => response.json()).then(data => this.setState({books: data}));
+            //fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
+            //fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(response => response.json()).then(data => this.setState({books: data}));
             this.setState({ books: _books2.default });
             this.setState({ authors: _authors2.default });
         }
@@ -24695,11 +24695,11 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(94);
 
-var _books = __webpack_require__(23);
+var _books = __webpack_require__(15);
 
 var _books2 = _interopRequireDefault(_books);
 
-var _authors = __webpack_require__(24);
+var _authors = __webpack_require__(16);
 
 var _authors2 = _interopRequireDefault(_authors);
 
@@ -24901,11 +24901,11 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(97);
 
-var _books = __webpack_require__(23);
+var _books = __webpack_require__(15);
 
 var _books2 = _interopRequireDefault(_books);
 
-var _authors = __webpack_require__(24);
+var _authors = __webpack_require__(16);
 
 var _authors2 = _interopRequireDefault(_authors);
 
@@ -25124,11 +25124,11 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(100);
 
-var _books = __webpack_require__(23);
+var _books = __webpack_require__(15);
 
 var _books2 = _interopRequireDefault(_books);
 
-var _authors = __webpack_require__(24);
+var _authors = __webpack_require__(16);
 
 var _authors2 = _interopRequireDefault(_authors);
 
