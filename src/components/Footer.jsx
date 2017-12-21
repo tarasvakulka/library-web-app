@@ -7,9 +7,8 @@ class Footer extends React.Component {
             
               <footer className="footer  py-3 text-muted">
                 <div className="container">
-                    <div className="row align-items-start ">
+                    <div className="row align-items-end ">
                         <div className="col-lg-4 ">
-                            <h5 className="text-center py-2">About</h5>
                             <p className="pt-3" >© Library, 2017</p>
                         </div>
                         <div className="col-lg-4">

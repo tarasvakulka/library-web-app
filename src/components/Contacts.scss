@@ -4,12 +4,8 @@
 #contacts a {
     color: black;
 }
-#contacts h5 {
-    text-transform: uppercase;
-}
-.icon-size {
-    height: 30px;
-    width: 33px;
+#contacts ul {
+    padding-left: 0;
 }
 @media screen and (max-width: 1250px) {
     #contacts iframe {

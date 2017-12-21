@@ -1,5 +1,8 @@
-#section {
+#book-list {
     height: 100vh;
-    //background-image: url("../images/library-bg.jpg");
-    //background-size: cover;
+}
+@media screen and (max-width: 576px){
+    #author-link {
+        display: block;
+    }
 }

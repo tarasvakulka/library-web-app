@@ -23,10 +23,6 @@ module.exports = {
                 use: ["style-loader","css-loader","sass-loader"]
             },
             {
-                test: /\.json$/,
-                use: ["json-loader"]
-            },
-            {
                 test: /\.gif$/,
                 use: ["url-loader?limit=10000&mimetype=image/gif"]
             },

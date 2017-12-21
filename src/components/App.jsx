@@ -8,6 +8,7 @@ import AuthorList from "./AuthorList.jsx";
 import Author from "./Author.jsx";
 import Book from "./Book.jsx";
 import Genre from "./Genre.jsx";
+import Contacts from "./Contacts.jsx";
 
 import "./App.scss";
 
@@ -23,6 +24,7 @@ class App extends React.Component {
                             <Route path="/book/:id" component={Book}/>
                             <Route path="/author/:id" component={Author}/>
                             <Route path="/genre/:id" component={Genre} />
+                            <Route path="/contacts" component={Contacts}/>
                         </Switch>
                         <Footer/>
                     </div>

@@ -38,7 +38,7 @@ class Navbar extends React.Component {
                     <Link id="books_link" className={this.state.books_link + " nav-link"} to='/' onClick={this.activeHandler}>Books </Link>
                   </li>
                   <li className="nav-item" >
-                    <Link id="authors_link" className={this.state.authors_link + " nav-link"} to='/partners' onClick={this.activeHandler}>Authors </Link>
+                    <Link id="authors_link" className={this.state.authors_link + " nav-link"} to='/authors' onClick={this.activeHandler}>Authors </Link>
                   </li>
                   <li className="nav-item" >
                     <Link id="contacts_link" className={this.state.contacts_link + " nav-link"} to='/contacts' onClick={this.activeHandler}>Contacts </Link>
