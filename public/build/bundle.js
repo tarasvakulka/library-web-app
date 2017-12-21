@@ -24362,9 +24362,7 @@ var BookList = function (_React$Component) {
         value: function componentWillMount() {
             var url = "./src/books.json";
             var a = fetch(url).then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                return data;
+                return console.log(response);
             });
             console.log(a);
         }
