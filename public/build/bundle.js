@@ -20170,23 +20170,23 @@ var _BookList = __webpack_require__(85);
 
 var _BookList2 = _interopRequireDefault(_BookList);
 
-var _AuthorList = __webpack_require__(89);
+var _AuthorList = __webpack_require__(88);
 
 var _AuthorList2 = _interopRequireDefault(_AuthorList);
 
-var _Author = __webpack_require__(92);
+var _Author = __webpack_require__(91);
 
 var _Author2 = _interopRequireDefault(_Author);
 
-var _Book = __webpack_require__(95);
+var _Book = __webpack_require__(94);
 
 var _Book2 = _interopRequireDefault(_Book);
 
-var _Genre = __webpack_require__(98);
+var _Genre = __webpack_require__(97);
 
 var _Genre2 = _interopRequireDefault(_Genre);
 
-__webpack_require__(101);
+__webpack_require__(100);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24361,10 +24361,10 @@ var BookList = function (_React$Component) {
         key: "componentWillMount",
         value: function componentWillMount() {
             var url = "./src/books.json";
-            var books = fetch(url).then(function (response) {
+            fetch(url).then(function (response) {
                 return response.json();
             }).then(function (data) {
-                return data;
+                var books = data;
             });
             console.log(books);
         }
@@ -24438,8 +24438,7 @@ exports.push([module.i, "#section {\n  height: 100vh; }\n", ""]);
 
 
 /***/ }),
-/* 88 */,
-/* 89 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24455,7 +24454,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(90);
+__webpack_require__(89);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24499,13 +24498,13 @@ var AuthorList = function (_React$Component) {
 exports.default = AuthorList;
 
 /***/ }),
-/* 90 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(91);
+var content = __webpack_require__(90);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24530,7 +24529,7 @@ if(false) {
 }
 
 /***/ }),
-/* 91 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(undefined);
@@ -24544,7 +24543,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 92 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24560,7 +24559,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(93);
+__webpack_require__(92);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24604,13 +24603,13 @@ var Author = function (_React$Component) {
 exports.default = Author;
 
 /***/ }),
-/* 93 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(94);
+var content = __webpack_require__(93);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24635,7 +24634,7 @@ if(false) {
 }
 
 /***/ }),
-/* 94 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(undefined);
@@ -24649,7 +24648,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 95 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24665,7 +24664,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(96);
+__webpack_require__(95);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24709,13 +24708,13 @@ var Book = function (_React$Component) {
 exports.default = Book;
 
 /***/ }),
-/* 96 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(97);
+var content = __webpack_require__(96);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24740,7 +24739,7 @@ if(false) {
 }
 
 /***/ }),
-/* 97 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(undefined);
@@ -24754,7 +24753,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 98 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24770,7 +24769,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(99);
+__webpack_require__(98);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24814,13 +24813,13 @@ var Genre = function (_React$Component) {
 exports.default = Genre;
 
 /***/ }),
-/* 99 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(100);
+var content = __webpack_require__(99);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24845,7 +24844,7 @@ if(false) {
 }
 
 /***/ }),
-/* 100 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(undefined);
@@ -24859,13 +24858,13 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 101 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(102);
+var content = __webpack_require__(101);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24890,7 +24889,7 @@ if(false) {
 }
 
 /***/ }),
-/* 102 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(undefined);
