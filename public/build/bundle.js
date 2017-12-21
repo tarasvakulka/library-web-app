@@ -24373,37 +24373,39 @@ var BookList = function (_React$Component) {
             authors: []
         };
         _this.getAuthorId = _this.getAuthorId.bind(_this);
-        fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(function (response) {
-            return response.json();
-        }).then(function (data) {
-            return _this.setState({ books: data });
-        });
-        fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(function (response) {
-            return response.json();
-        }).then(function (data) {
-            return _this.setState({ authors: data });
-        });
+
         return _this;
     }
 
     _createClass(BookList, [{
         key: "componentWillMount",
         value: function componentWillMount() {
-            console.log(this.state.authors);
+            var _this2 = this;
+
             //this.setState({books: booksdata});
             //this.setState({authors: authorsdata})
+            fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                return _this2.setState({ books: data });
+            });
+            fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                return _this2.setState({ authors: data });
+            });
         }
     }, {
         key: "getAuthorId",
         value: function getAuthorId(authorName) {
-            return this.state.authors.find(function (author) {
+            if (this.state.authors = []) return 1;else return this.state.authors.find(function (author) {
                 return author.name == authorName;
             }).id;
         }
     }, {
         key: "render",
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
             console.log(this.state.books);
             return _react2.default.createElement(
@@ -24445,7 +24447,7 @@ var BookList = function (_React$Component) {
                                 book.authors.map(function (author) {
                                     return _react2.default.createElement(
                                         "a",
-                                        { id: "author-link", className: "pr-3", href: "#author/" + _this2.getAuthorId(author) },
+                                        { id: "author-link", className: "pr-3", href: "#author/" + _this3.getAuthorId(author) },
                                         author
                                     );
                                 })

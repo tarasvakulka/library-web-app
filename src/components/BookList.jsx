@@ -9,17 +9,18 @@ class BookList extends React.Component {
             authors: []
         }
         this.getAuthorId = this.getAuthorId.bind(this); 
+        
+    }
+    componentWillMount() {
+        //this.setState({books: booksdata});
+        //this.setState({authors: authorsdata})
         fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
         fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(response => response.json()).then(data => this.setState({authors: data}));
     }
-    componentWillMount() {
-        console.log(this.state.authors);
-        //this.setState({books: booksdata});
-        //this.setState({authors: authorsdata})
-    
-    }
     getAuthorId(authorName) {
-       return this.state.authors.find(author => author.name == authorName).id;
+        if(this.state.authors = []) return 1;
+        else
+        return this.state.authors.find(author => author.name == authorName).id;
     }
     render() {
         console.log(this.state.books);
