@@ -20170,23 +20170,23 @@ var _BookList = __webpack_require__(85);
 
 var _BookList2 = _interopRequireDefault(_BookList);
 
-var _AuthorList = __webpack_require__(86);
+var _AuthorList = __webpack_require__(88);
 
 var _AuthorList2 = _interopRequireDefault(_AuthorList);
 
-var _Author = __webpack_require__(89);
+var _Author = __webpack_require__(91);
 
 var _Author2 = _interopRequireDefault(_Author);
 
-var _Book = __webpack_require__(92);
+var _Book = __webpack_require__(94);
 
 var _Book2 = _interopRequireDefault(_Book);
 
-var _Genre = __webpack_require__(95);
+var _Genre = __webpack_require__(97);
 
 var _Genre2 = _interopRequireDefault(_Genre);
 
-__webpack_require__(98);
+__webpack_require__(100);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24338,7 +24338,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(100);
+__webpack_require__(86);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24365,7 +24365,7 @@ var BookList = function (_React$Component) {
             fetch(url).then(function (response) {
                 return response.json();
             }).then(function (data) {
-                books = data;console.log(data);
+                var books = data;console.log(data);
             });
             console.log(JSON.parse(books));
         }
@@ -24397,6 +24397,51 @@ exports.default = BookList;
 /* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(87);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(7)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./BookList.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./BookList.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(6)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "#section {\n  height: 100vh; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -24410,7 +24455,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(87);
+__webpack_require__(89);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24454,13 +24499,13 @@ var AuthorList = function (_React$Component) {
 exports.default = AuthorList;
 
 /***/ }),
-/* 87 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(88);
+var content = __webpack_require__(90);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24485,7 +24530,7 @@ if(false) {
 }
 
 /***/ }),
-/* 88 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(undefined);
@@ -24499,7 +24544,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 89 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24515,7 +24560,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(90);
+__webpack_require__(92);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24559,13 +24604,13 @@ var Author = function (_React$Component) {
 exports.default = Author;
 
 /***/ }),
-/* 90 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(91);
+var content = __webpack_require__(93);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24590,7 +24635,7 @@ if(false) {
 }
 
 /***/ }),
-/* 91 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(undefined);
@@ -24604,7 +24649,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 92 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24620,7 +24665,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(93);
+__webpack_require__(95);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24664,13 +24709,13 @@ var Book = function (_React$Component) {
 exports.default = Book;
 
 /***/ }),
-/* 93 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(94);
+var content = __webpack_require__(96);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24695,7 +24740,7 @@ if(false) {
 }
 
 /***/ }),
-/* 94 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(undefined);
@@ -24709,7 +24754,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 95 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24725,7 +24770,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(96);
+__webpack_require__(98);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24769,13 +24814,13 @@ var Genre = function (_React$Component) {
 exports.default = Genre;
 
 /***/ }),
-/* 96 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(97);
+var content = __webpack_require__(99);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24800,51 +24845,6 @@ if(false) {
 }
 
 /***/ }),
-/* 97 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(6)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-/* 98 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(99);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {"hmr":true}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(7)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./App.scss", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./App.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
 /* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -24853,7 +24853,7 @@ exports = module.exports = __webpack_require__(6)(undefined);
 
 
 // module
-exports.push([module.i, "li {\n  list-style-type: none; }\n\na, a:hover {\n  text-decoration: none; }\n\n#mount-poin {\n  height: 100%; }\n\n.App {\n  height: 100%; }\n\n@media (min-width: 768px) {\n  .navbar-right {\n    font-size: 1.15em; }\n  .navbar-brand > img {\n    height: 40px; } }\n\n@media (min-width: 992px) {\n  .navbar-right {\n    font-size: 1.4em; }\n  .navbar-brand > img {\n    height: 60px; }\n  .navbar-brand {\n    padding: 5px 10px; } }\n\n@media (min-width: 1200px) {\n  .navbar-right {\n    font-size: 1.5em; } }\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -24879,8 +24879,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./BookList.scss", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./BookList.scss");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./App.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./App.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -24898,7 +24898,7 @@ exports = module.exports = __webpack_require__(6)(undefined);
 
 
 // module
-exports.push([module.i, "#section {\n  height: 100vh; }\n", ""]);
+exports.push([module.i, "li {\n  list-style-type: none; }\n\na, a:hover {\n  text-decoration: none; }\n\n#mount-poin {\n  height: 100%; }\n\n.App {\n  height: 100%; }\n\n@media (min-width: 768px) {\n  .navbar-right {\n    font-size: 1.15em; }\n  .navbar-brand > img {\n    height: 40px; } }\n\n@media (min-width: 992px) {\n  .navbar-right {\n    font-size: 1.4em; }\n  .navbar-brand > img {\n    height: 60px; }\n  .navbar-brand {\n    padding: 5px 10px; } }\n\n@media (min-width: 1200px) {\n  .navbar-right {\n    font-size: 1.5em; } }\n", ""]);
 
 // exports
 
