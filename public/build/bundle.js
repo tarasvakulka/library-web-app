@@ -24340,10 +24340,6 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(86);
 
-var _books = __webpack_require__(88);
-
-var _books2 = _interopRequireDefault(_books);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24351,8 +24347,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-//import BookListItem from "./BookListItem.jsx";
 
+//import BookListItem from "./BookListItem.jsx";
+//import bookdata from "../books.json"
 
 var BookList = function (_React$Component) {
     _inherits(BookList, _React$Component);
@@ -24381,6 +24378,8 @@ var BookList = function (_React$Component) {
             }).then(function (data) {
                 return _this2.setState({ books: data });
             });
+            //this.setState({books: bookdata});
+
         }
     }, {
         key: "render",
@@ -24392,26 +24391,22 @@ var BookList = function (_React$Component) {
                 _react2.default.createElement(
                     "div",
                     { className: "container" },
-                    _react2.default.createElement(
-                        "div",
-                        { className: "row" },
-                        this.state.books.match(function (book) {
-                            return _react2.default.createElement(
+                    this.state.books.map(function (book) {
+                        return _react2.default.createElement(
+                            "div",
+                            { className: "row" },
+                            _react2.default.createElement(
                                 "div",
-                                null,
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "col-6" },
-                                    book.name
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "col-6" },
-                                    book.authors
-                                )
-                            );
-                        })
-                    )
+                                { className: "col-6" },
+                                book.name
+                            ),
+                            _react2.default.createElement(
+                                "div",
+                                { className: "col-6" },
+                                book.authors
+                            )
+                        );
+                    })
                 )
             );
         }
@@ -24468,12 +24463,7 @@ exports.push([module.i, "#section {\n  height: 100vh; }\n", ""]);
 
 
 /***/ }),
-/* 88 */
-/***/ (function(module, exports) {
-
-module.exports = [{"id":"1","name":"The Adventures of Tom Sawyer","authors":["Mark Twain"],"genre":"novel","descripton":"Mark Twain's novel is one of the first American literary masterpieces, embracing local vernacular to personify the unique small-town culture of this fledgling nation."},{"id":"2","name":"Let it Snow","authors":["John Green","Maureen Johnson"],"genre":"romance","descripton":"Sparkling white snowdrifts, beautiful presents wrapped in ribbons, and multicolored lights glittering in the night through the falling snow. A Christmas Eve snowstorm transforms one small town into a romantic haven, the kind you see only in movies."},{"id":"3","name":"Modern Romance","authors":["Aziz Ansari"],"genre":"humor","descripton":"At some point, every one of us embarks on a journey to find love. We meet people, date, get into and out of relationships, all with the hope of finding someone with whom we share a deep connection."},{"id":"4","name":"The Adventures of Huckleberry Finn","authors":["Mark Twain"],"genre":"novel","descripton":"Adventures of Huckleberry Finn is a novel by Mark Twain, first published in the United Kingdom in December 1884 and in the United States in February 1885. Commonly named among the Great American Novels, the work is among the first in major American literature to be written throughout in vernacular English"}]
-
-/***/ }),
+/* 88 */,
 /* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 

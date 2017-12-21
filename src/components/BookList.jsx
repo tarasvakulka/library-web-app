@@ -1,7 +1,7 @@
 import React from "react";
 import "./BookList.scss";
 //import BookListItem from "./BookListItem.jsx";
-import bookdata from "../books.json"
+//import bookdata from "../books.json"
 
 class BookList extends React.Component {
     constructor(props) {
@@ -15,7 +15,7 @@ class BookList extends React.Component {
         const url = "./src/books.json";
         
         fetch(url).then(response => response.json()).then(data => this.setState({books: data}));
-
+        //this.setState({books: bookdata});
 
     
     }
@@ -24,10 +24,9 @@ class BookList extends React.Component {
         return(
             <div id="section">
                 <div className="container">
-                    <div className="row">
                         {       
-                            this.state.books.match(book =>
-                                <div>
+                            this.state.books.map(book =>
+                                <div className="row">
                                     <div className="col-6">
                                         {book.name}
                                     </div>
@@ -37,7 +36,6 @@ class BookList extends React.Component {
                                 </div>
                             )
                         }
-                    </div>
                 </div>
             </div>
         );
