@@ -24367,10 +24367,11 @@ var BookList = function (_React$Component) {
         key: "componentWillMount",
         value: function componentWillMount() {
             var url = "./src/books.json";
-            var a = fetch(url).then(function (response) {
+            var a = void 0;
+            fetch(url).then(function (response) {
                 return response.json();
             }).then(function (data) {
-                return data;
+                a = data;return data;
             });
             console.log(a);
             this.setState({ books: a });

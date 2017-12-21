@@ -11,7 +11,8 @@ class BookList extends React.Component {
     }
     componentWillMount() {
         const url = "./src/books.json";
-        let a = fetch(url).then(response => response.json()).then(data => data);
+        let a;
+        fetch(url).then(response => response.json()).then(data => { a = data; return data;});
         console.log(a);
         this.setState({books: a});
     }
