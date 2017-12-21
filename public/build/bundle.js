@@ -20170,23 +20170,23 @@ var _BookList = __webpack_require__(85);
 
 var _BookList2 = _interopRequireDefault(_BookList);
 
-var _AuthorList = __webpack_require__(88);
+var _AuthorList = __webpack_require__(89);
 
 var _AuthorList2 = _interopRequireDefault(_AuthorList);
 
-var _Author = __webpack_require__(91);
+var _Author = __webpack_require__(92);
 
 var _Author2 = _interopRequireDefault(_Author);
 
-var _Book = __webpack_require__(94);
+var _Book = __webpack_require__(95);
 
 var _Book2 = _interopRequireDefault(_Book);
 
-var _Genre = __webpack_require__(97);
+var _Genre = __webpack_require__(98);
 
 var _Genre2 = _interopRequireDefault(_Genre);
 
-__webpack_require__(100);
+__webpack_require__(101);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24340,6 +24340,10 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(86);
 
+var _books = __webpack_require__(88);
+
+var _books2 = _interopRequireDefault(_books);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24375,6 +24379,7 @@ var BookList = function (_React$Component) {
             }).then(function (data) {
                 return _this2.setState({ books: data });
             });
+            console.log(this.state.books);
         }
     }, {
         key: "render",
@@ -24447,6 +24452,12 @@ exports.push([module.i, "#section {\n  height: 100vh; }\n", ""]);
 
 /***/ }),
 /* 88 */
+/***/ (function(module, exports) {
+
+module.exports = [{"id":"1","name":"The Adventures of Tom Sawyer","authors":["Mark Twain"],"genre":"novel","descripton":"Mark Twain's novel is one of the first American literary masterpieces, embracing local vernacular to personify the unique small-town culture of this fledgling nation."},{"id":"2","name":"Let it Snow","authors":["John Green","Maureen Johnson"],"genre":"romance","descripton":"Sparkling white snowdrifts, beautiful presents wrapped in ribbons, and multicolored lights glittering in the night through the falling snow. A Christmas Eve snowstorm transforms one small town into a romantic haven, the kind you see only in movies."},{"id":"3","name":"Modern Romance","authors":["Aziz Ansari"],"genre":"humor","descripton":"At some point, every one of us embarks on a journey to find love. We meet people, date, get into and out of relationships, all with the hope of finding someone with whom we share a deep connection."},{"id":"4","name":"The Adventures of Huckleberry Finn","authors":["Mark Twain"],"genre":"novel","descripton":"Adventures of Huckleberry Finn is a novel by Mark Twain, first published in the United Kingdom in December 1884 and in the United States in February 1885. Commonly named among the Great American Novels, the work is among the first in major American literature to be written throughout in vernacular English"}]
+
+/***/ }),
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24462,7 +24473,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(89);
+__webpack_require__(90);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24506,13 +24517,13 @@ var AuthorList = function (_React$Component) {
 exports.default = AuthorList;
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(90);
+var content = __webpack_require__(91);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24537,7 +24548,7 @@ if(false) {
 }
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(undefined);
@@ -24551,7 +24562,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24567,7 +24578,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(92);
+__webpack_require__(93);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24611,13 +24622,13 @@ var Author = function (_React$Component) {
 exports.default = Author;
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(93);
+var content = __webpack_require__(94);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24642,7 +24653,7 @@ if(false) {
 }
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(undefined);
@@ -24656,7 +24667,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24672,7 +24683,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(95);
+__webpack_require__(96);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24716,13 +24727,13 @@ var Book = function (_React$Component) {
 exports.default = Book;
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(96);
+var content = __webpack_require__(97);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24747,7 +24758,7 @@ if(false) {
 }
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(undefined);
@@ -24761,7 +24772,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24777,7 +24788,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(98);
+__webpack_require__(99);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24821,13 +24832,13 @@ var Genre = function (_React$Component) {
 exports.default = Genre;
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(99);
+var content = __webpack_require__(100);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24852,7 +24863,7 @@ if(false) {
 }
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(undefined);
@@ -24866,13 +24877,13 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(101);
+var content = __webpack_require__(102);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24897,7 +24908,7 @@ if(false) {
 }
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(undefined);

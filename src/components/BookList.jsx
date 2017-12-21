@@ -1,5 +1,6 @@
 import React from "react";
 import "./BookList.scss";
+import bookdata from "../books.json"
 
 class BookList extends React.Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class BookList extends React.Component {
         const url = "./src/books.json";
         
         fetch(url).then(response => response.json()).then(data => this.setState({books: data}));
+        console.log(this.state.books);
     
     }
     render() {
@@ -20,7 +22,7 @@ class BookList extends React.Component {
             <div id="section">
                 <div className="container">
                     <div className="row">
-                        {this.state.books.toString()}
+                        { this.state.books.toString()}
                     </div>
                 </div>
             </div>
