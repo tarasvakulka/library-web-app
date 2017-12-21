@@ -13,7 +13,7 @@ class BookList extends React.Component {
         fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(response => response.json()).then(data => this.setState({authors: data}));
     }
     componentWillMount() {
-        
+        console.log(this.state.authors);
         //this.setState({books: booksdata});
         //this.setState({authors: authorsdata})
     

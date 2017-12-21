@@ -24389,10 +24389,9 @@ var BookList = function (_React$Component) {
     _createClass(BookList, [{
         key: "componentWillMount",
         value: function componentWillMount() {
-
+            console.log(this.state.authors);
             //this.setState({books: booksdata});
             //this.setState({authors: authorsdata})
-
         }
     }, {
         key: "getAuthorId",
