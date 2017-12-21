@@ -20,8 +20,7 @@ class BookList extends React.Component {
             <div id="section">
                 <div className="container">
                     <div className="row">
-                        BookList
-                        {this.state.books}
+                        {this.state.books.toString()}
                     </div>
                 </div>
             </div>

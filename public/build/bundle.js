@@ -24388,8 +24388,7 @@ var BookList = function (_React$Component) {
                     _react2.default.createElement(
                         "div",
                         { className: "row" },
-                        "BookList",
-                        this.state.books
+                        this.state.books.toString()
                     )
                 )
             );
