@@ -24351,10 +24351,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var BookList = function (_React$Component) {
     _inherits(BookList, _React$Component);
 
-    function BookList() {
+    function BookList(props) {
         _classCallCheck(this, BookList);
 
-        return _possibleConstructorReturn(this, (BookList.__proto__ || Object.getPrototypeOf(BookList)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (BookList.__proto__ || Object.getPrototypeOf(BookList)).call(this, props));
+
+        _this.state = {
+            books: [],
+            authors: []
+        };
+        return _this;
     }
 
     _createClass(BookList, [{
@@ -24367,6 +24373,7 @@ var BookList = function (_React$Component) {
                 return data;
             });
             console.log(a);
+            this.setState({ books: a });
         }
     }, {
         key: "render",
@@ -24380,7 +24387,8 @@ var BookList = function (_React$Component) {
                     _react2.default.createElement(
                         "div",
                         { className: "row" },
-                        "BookList"
+                        "BookList",
+                        this.state.books
                     )
                 )
             );
