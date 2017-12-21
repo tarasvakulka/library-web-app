@@ -24364,7 +24364,7 @@ var BookList = function (_React$Component) {
             var a = fetch(url).then(function (response) {
                 return response.json();
             }).then(function (data) {
-                return console.log(data);
+                return data;
             });
             console.log(a);
         }
