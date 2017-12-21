@@ -24361,13 +24361,11 @@ var BookList = function (_React$Component) {
         key: "componentWillMount",
         value: function componentWillMount() {
             var url = "./src/books.json";
-            var books = void 0;
             fetch(url).then(function (response) {
                 return response.json();
             }).then(function (data) {
-                var books = data;console.log(data);
+                var books = data;console.log(data);console.log(JSON.parse(books));
             });
-            console.log(JSON.parse(books));
         }
     }, {
         key: "render",
