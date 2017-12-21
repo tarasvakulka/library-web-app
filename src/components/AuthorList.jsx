@@ -13,14 +13,14 @@ class AuthorList extends React.Component {
         this.getBookId = this.getBookId.bind(this);
     }
     componentWillMount() {
-        //fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
-        //fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(response => response.json()).then(data => this.setState({books: data}));
-        this.setState({books: booksdata});
-        this.setState({authors: authorsdata})
+        fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
+        fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(response => response.json()).then(data => this.setState({authors: data}));
     
     }
     getBookId(bookName) {
-       return this.state.books.find(book => book.name == bookName).id;
+        if(this.state.books == []) return 1;
+        else
+        return this.state.books.find(book => book.name == bookName).id;
     }
     render() {
         return(

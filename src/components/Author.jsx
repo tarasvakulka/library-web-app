@@ -14,16 +14,17 @@ class Author extends React.Component {
         this.getCurrentAuthor = this.getCurrentAuthor.bind(this);
     }
     componentWillMount() {
-        //fetch("./src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
-        //fetch("./src/authors.json").then(response => response.json()).then(data => this.setState({books: data}));
-        this.setState({books: booksdata});
-        this.setState({authors: authorsdata});
-    
+        fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
+        fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(response => response.json()).then(data => this.setState({authors: data})); 
     }
     getBookId(bookName) {
-       return this.state.books.find(book => book.name == bookName).id;
+        if(this.state.books == []) return 1;
+        else
+        return this.state.books.find(book => book.name == bookName).id;
     }
     getCurrentAuthor(){
+        if(this.state.authors == []) return {};
+        else
         return this.state.authors.find(author => author.id == this.props.match.params.id);
     }
     render() {

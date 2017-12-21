@@ -13,26 +13,29 @@ class Genre extends React.Component {
         this.getAuthorId = this.getAuthorId.bind(this);
     }
     componentWillMount() {
-        //fetch("./src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
-        //fetch("./src/authors.json").then(response => response.json()).then(data => this.setState({books: data}));
-        this.setState({books: booksdata});
-        this.setState({authors: authorsdata});
+        fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
+        fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(response => response.json()).then(data => this.setState({authors: data}));
     
     }
     getCurrentBooks() {
         let genre = this.props.match.params.id;
-        let currentbooks = [];
-        for(let i = 0; i<this.state.books.length; i++)
-        {
-            if(this.state.books[i].genre == genre) { 
-                currentbooks.push(this.state.books[i]);
+        if(this.state.books == []) return {};
+        else {
+            let currentbooks = [];
+            for(let i = 0; i<this.state.books.length; i++)
+            {
+                if(this.state.books[i].genre == genre) { 
+                    currentbooks.push(this.state.books[i]);
+                }
             }
+            return currentbooks;
         }
-        return currentbooks;
 
     }
     getAuthorId(authorName) {
-       return this.state.authors.find(author => author.name == authorName).id;
+        if(this.state.authors = []) return 1;
+        else
+        return this.state.authors.find(author => author.name == authorName).id;
     }
     render() {
         let currentBooks = this.getCurrentBooks();

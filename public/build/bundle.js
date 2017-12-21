@@ -24563,22 +24563,30 @@ var AuthorList = function (_React$Component) {
     _createClass(AuthorList, [{
         key: "componentWillMount",
         value: function componentWillMount() {
-            //fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
-            //fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(response => response.json()).then(data => this.setState({books: data}));
-            this.setState({ books: _books2.default });
-            this.setState({ authors: _authors2.default });
+            var _this2 = this;
+
+            fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                return _this2.setState({ books: data });
+            });
+            fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                return _this2.setState({ authors: data });
+            });
         }
     }, {
         key: "getBookId",
         value: function getBookId(bookName) {
-            return this.state.books.find(function (book) {
+            if (this.state.books == []) return 1;else return this.state.books.find(function (book) {
                 return book.name == bookName;
             }).id;
         }
     }, {
         key: "render",
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
             return _react2.default.createElement(
                 "div",
@@ -24613,7 +24621,7 @@ var AuthorList = function (_React$Component) {
                                         author.books.map(function (book) {
                                             return _react2.default.createElement(
                                                 "a",
-                                                { className: "dropdown-item", href: "#book/" + _this2.getBookId(book) },
+                                                { className: "dropdown-item", href: "#book/" + _this3.getBookId(book) },
                                                 book
                                             );
                                         })
@@ -24732,31 +24740,39 @@ var Author = function (_React$Component) {
     _createClass(Author, [{
         key: "componentWillMount",
         value: function componentWillMount() {
-            //fetch("./src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
-            //fetch("./src/authors.json").then(response => response.json()).then(data => this.setState({books: data}));
-            this.setState({ books: _books2.default });
-            this.setState({ authors: _authors2.default });
+            var _this2 = this;
+
+            fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                return _this2.setState({ books: data });
+            });
+            fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                return _this2.setState({ authors: data });
+            });
         }
     }, {
         key: "getBookId",
         value: function getBookId(bookName) {
-            return this.state.books.find(function (book) {
+            if (this.state.books == []) return 1;else return this.state.books.find(function (book) {
                 return book.name == bookName;
             }).id;
         }
     }, {
         key: "getCurrentAuthor",
         value: function getCurrentAuthor() {
-            var _this2 = this;
+            var _this3 = this;
 
-            return this.state.authors.find(function (author) {
-                return author.id == _this2.props.match.params.id;
+            if (this.state.authors == []) return {};else return this.state.authors.find(function (author) {
+                return author.id == _this3.props.match.params.id;
             });
         }
     }, {
         key: "render",
         value: function render() {
-            var _this3 = this;
+            var _this4 = this;
 
             var currentAuthor = this.getCurrentAuthor();
             return _react2.default.createElement(
@@ -24820,7 +24836,7 @@ var Author = function (_React$Component) {
                             currentAuthor.books.map(function (book) {
                                 return _react2.default.createElement(
                                     "a",
-                                    { className: "pr-3", href: "#book/" + _this3.getBookId(book) },
+                                    { className: "pr-3", href: "#book/" + _this4.getBookId(book) },
                                     book
                                 );
                             })
@@ -24938,31 +24954,39 @@ var Book = function (_React$Component) {
     _createClass(Book, [{
         key: "componentWillMount",
         value: function componentWillMount() {
-            //fetch("./src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
-            //fetch("./src/authors.json").then(response => response.json()).then(data => this.setState({books: data}));
-            this.setState({ books: _books2.default });
-            this.setState({ authors: _authors2.default });
+            var _this2 = this;
+
+            fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                return _this2.setState({ books: data });
+            });
+            fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                return _this2.setState({ authors: data });
+            });
         }
     }, {
         key: "getAuthorId",
         value: function getAuthorId(authorName) {
-            return this.state.authors.find(function (author) {
+            if (this.state.authors = []) return 1;else return this.state.authors.find(function (author) {
                 return author.name == authorName;
             }).id;
         }
     }, {
         key: "getCurrentBook",
         value: function getCurrentBook() {
-            var _this2 = this;
+            var _this3 = this;
 
-            return this.state.books.find(function (book) {
-                return book.id == _this2.props.match.params.id;
+            if (this.state.books == []) return {};else return this.state.books.find(function (book) {
+                return book.id == _this3.props.match.params.id;
             });
         }
     }, {
         key: "render",
         value: function render() {
-            var _this3 = this;
+            var _this4 = this;
 
             var currentBook = this.getCurrentBook();
             return _react2.default.createElement(
@@ -25012,7 +25036,7 @@ var Book = function (_React$Component) {
                             currentBook.authors.map(function (author) {
                                 return _react2.default.createElement(
                                     "a",
-                                    { className: "pr-3", href: "#author/" + _this3.getAuthorId(author) },
+                                    { className: "pr-3", href: "#author/" + _this4.getAuthorId(author) },
                                     author
                                 );
                             })
@@ -25160,34 +25184,44 @@ var Genre = function (_React$Component) {
     _createClass(Genre, [{
         key: "componentWillMount",
         value: function componentWillMount() {
-            //fetch("./src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
-            //fetch("./src/authors.json").then(response => response.json()).then(data => this.setState({books: data}));
-            this.setState({ books: _books2.default });
-            this.setState({ authors: _authors2.default });
+            var _this2 = this;
+
+            fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                return _this2.setState({ books: data });
+            });
+            fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                return _this2.setState({ authors: data });
+            });
         }
     }, {
         key: "getCurrentBooks",
         value: function getCurrentBooks() {
             var genre = this.props.match.params.id;
-            var currentbooks = [];
-            for (var i = 0; i < this.state.books.length; i++) {
-                if (this.state.books[i].genre == genre) {
-                    currentbooks.push(this.state.books[i]);
+            if (this.state.books == []) return {};else {
+                var currentbooks = [];
+                for (var i = 0; i < this.state.books.length; i++) {
+                    if (this.state.books[i].genre == genre) {
+                        currentbooks.push(this.state.books[i]);
+                    }
                 }
+                return currentbooks;
             }
-            return currentbooks;
         }
     }, {
         key: "getAuthorId",
         value: function getAuthorId(authorName) {
-            return this.state.authors.find(function (author) {
+            if (this.state.authors = []) return 1;else return this.state.authors.find(function (author) {
                 return author.name == authorName;
             }).id;
         }
     }, {
         key: "render",
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
             var currentBooks = this.getCurrentBooks();
             return _react2.default.createElement(
@@ -25229,7 +25263,7 @@ var Genre = function (_React$Component) {
                                 book.authors.map(function (author) {
                                     return _react2.default.createElement(
                                         "a",
-                                        { id: "author-link", className: "pr-3", href: "#author/" + _this2.getAuthorId(author) },
+                                        { id: "author-link", className: "pr-3", href: "#author/" + _this3.getAuthorId(author) },
                                         author
                                     );
                                 })
