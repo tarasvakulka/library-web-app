@@ -21,7 +21,6 @@ class Genre extends React.Component {
     }
     getCurrentBooks() {
         let genre = this.props.match.params.id;
-        console.log(genre);
         let currentbooks = [];
         for(let i = 0; i<this.state.books.length; i++)
         {
