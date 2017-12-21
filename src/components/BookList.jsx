@@ -4,8 +4,8 @@ import "./BookList.scss";
 class BookList extends React.Component {
     componentWillMount() {
         const url = "./src/books.json";
-        let a = fetch(url).then(response => console.log(response.json()));
-        console.log(a);
+        let a = fetch(url).then(response => response.json()).then(data => console.log(data));
+        
     }
     render() {
         return(
