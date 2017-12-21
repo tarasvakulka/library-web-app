@@ -24366,15 +24366,15 @@ var BookList = function (_React$Component) {
     _createClass(BookList, [{
         key: "componentWillMount",
         value: function componentWillMount() {
+            var _this2 = this;
+
             var url = "./src/books.json";
-            var a = void 0;
+
             fetch(url).then(function (response) {
                 return response.json();
             }).then(function (data) {
-                a = data;return data;
+                return _this2.setState({ books: data });
             });
-            console.log(a);
-            this.setState({ books: a });
         }
     }, {
         key: "render",
