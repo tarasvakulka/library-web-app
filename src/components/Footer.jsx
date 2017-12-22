@@ -15,8 +15,8 @@ class Footer extends React.Component {
                             <h5 className="pt-2 text-center">Links</h5>
                             <ul>
                                 <li><a href="#">Books</a></li>
-                                <li><a href="#authors">Authors</a></li>
-                                <li><a href="#contacts">Contacts</a></li>
+                                <li><a href="#authors" onClick={window.scrollTo(0,0)}>Authors</a></li>
+                                <li><a href="#contacts" onClick={window.scrollTo(0,0)}>Contacts</a></li>
                             </ul>
                         </div>
                         <div className="col-lg-4">
