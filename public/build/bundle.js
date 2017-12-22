@@ -20182,27 +20182,27 @@ var _BookList = __webpack_require__(87);
 
 var _BookList2 = _interopRequireDefault(_BookList);
 
-var _AuthorList = __webpack_require__(90);
+var _AuthorList = __webpack_require__(91);
 
 var _AuthorList2 = _interopRequireDefault(_AuthorList);
 
-var _Author = __webpack_require__(93);
+var _Author = __webpack_require__(94);
 
 var _Author2 = _interopRequireDefault(_Author);
 
-var _Book = __webpack_require__(96);
+var _Book = __webpack_require__(97);
 
 var _Book2 = _interopRequireDefault(_Book);
 
-var _Genre = __webpack_require__(99);
+var _Genre = __webpack_require__(100);
 
 var _Genre2 = _interopRequireDefault(_Genre);
 
-var _Contacts = __webpack_require__(102);
+var _Contacts = __webpack_require__(103);
 
 var _Contacts2 = _interopRequireDefault(_Contacts);
 
-__webpack_require__(105);
+__webpack_require__(106);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24350,7 +24350,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(88);
+var _LibraryAction = __webpack_require__(88);
+
+var _LibraryAction2 = _interopRequireDefault(_LibraryAction);
+
+__webpack_require__(89);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24369,46 +24373,32 @@ var BookList = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (BookList.__proto__ || Object.getPrototypeOf(BookList)).call(this, props));
 
         _this.state = {
-            books: [],
-            authors: []
+            books: "",
+            authors: ""
         };
         _this.getAuthorId = _this.getAuthorId.bind(_this);
-
+        _LibraryAction2.default.loadBooks().then(function (data) {
+            return _this.setState({ books: data });
+        });
+        _LibraryAction2.default.loadAuthors().then(function (data) {
+            return _this.setState({ authors: data });
+        });
         return _this;
     }
 
     _createClass(BookList, [{
-        key: "componentWillMount",
-        value: function componentWillMount() {
-            var _this2 = this;
-
-            //this.setState({books: booksdata});
-            //this.setState({authors: authorsdata})
-            fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                return _this2.setState({ books: data });
-            });
-            fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                return _this2.setState({ authors: data });
-            });
-        }
-    }, {
         key: "getAuthorId",
         value: function getAuthorId(authorName) {
-            if (this.state.authors = []) return 1;else return this.state.authors.find(function (author) {
+            return this.state.authors.find(function (author) {
                 return author.name == authorName;
             }).id;
         }
     }, {
         key: "render",
         value: function render() {
-            var _this3 = this;
+            var _this2 = this;
 
-            console.log(this.state.books);
-            return _react2.default.createElement(
+            return this.state.books && this.state.authors ? _react2.default.createElement(
                 "div",
                 { id: "book-list" },
                 _react2.default.createElement(
@@ -24447,7 +24437,7 @@ var BookList = function (_React$Component) {
                                 book.authors.map(function (author) {
                                     return _react2.default.createElement(
                                         "a",
-                                        { id: "author-link", className: "pr-3", href: "#author/" + _this3.getAuthorId(author) },
+                                        { id: "author-link", className: "pr-3", href: "#author/" + _this2.getAuthorId(author) },
                                         author
                                     );
                                 })
@@ -24455,6 +24445,10 @@ var BookList = function (_React$Component) {
                         );
                     })
                 )
+            ) : _react2.default.createElement(
+                "div",
+                null,
+                "Loading..."
             );
         }
     }]);
@@ -24468,10 +24462,34 @@ exports.default = BookList;
 /* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var actions = {
+    loadBooks: function loadBooks() {
+        return fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(function (response) {
+            return response.json();
+        });
+    },
+    loadAuthors: function loadAuthors() {
+        return fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(function (response) {
+            return response.json();
+        });
+    }
+};
+exports.default = actions;
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(89);
+var content = __webpack_require__(90);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24496,7 +24514,7 @@ if(false) {
 }
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(undefined);
@@ -24510,7 +24528,7 @@ exports.push([module.i, "#book-list {\n  height: 100vh; }\n\n@media screen and (
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24526,7 +24544,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(91);
+var _LibraryAction = __webpack_require__(88);
+
+var _LibraryAction2 = _interopRequireDefault(_LibraryAction);
+
+__webpack_require__(92);
 
 var _books = __webpack_require__(15);
 
@@ -24553,42 +24575,32 @@ var AuthorList = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (AuthorList.__proto__ || Object.getPrototypeOf(AuthorList)).call(this, props));
 
         _this.state = {
-            books: [],
-            authors: []
+            books: "",
+            authors: ""
         };
         _this.getBookId = _this.getBookId.bind(_this);
+        _LibraryAction2.default.loadBooks().then(function (data) {
+            return _this.setState({ books: data });
+        });
+        _LibraryAction2.default.loadAuthors().then(function (data) {
+            return _this.setState({ authors: data });
+        });
         return _this;
     }
 
     _createClass(AuthorList, [{
-        key: "componentWillMount",
-        value: function componentWillMount() {
-            var _this2 = this;
-
-            fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                return _this2.setState({ books: data });
-            });
-            fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                return _this2.setState({ authors: data });
-            });
-        }
-    }, {
         key: "getBookId",
         value: function getBookId(bookName) {
-            if (this.state.books == []) return 1;else return this.state.books.find(function (book) {
+            return this.state.books.find(function (book) {
                 return book.name == bookName;
             }).id;
         }
     }, {
         key: "render",
         value: function render() {
-            var _this3 = this;
+            var _this2 = this;
 
-            return _react2.default.createElement(
+            return this.state.books && this.state.authors ? _react2.default.createElement(
                 "div",
                 { id: "author-list" },
                 _react2.default.createElement(
@@ -24621,7 +24633,7 @@ var AuthorList = function (_React$Component) {
                                         author.books.map(function (book) {
                                             return _react2.default.createElement(
                                                 "a",
-                                                { className: "dropdown-item", href: "#book/" + _this3.getBookId(book) },
+                                                { className: "dropdown-item", href: "#book/" + _this2.getBookId(book) },
                                                 book
                                             );
                                         })
@@ -24631,6 +24643,10 @@ var AuthorList = function (_React$Component) {
                         );
                     })
                 )
+            ) : _react2.default.createElement(
+                "div",
+                null,
+                "Loading...."
             );
         }
     }]);
@@ -24641,13 +24657,13 @@ var AuthorList = function (_React$Component) {
 exports.default = AuthorList;
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(92);
+var content = __webpack_require__(93);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24672,7 +24688,7 @@ if(false) {
 }
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(undefined);
@@ -24686,7 +24702,7 @@ exports.push([module.i, "#author-list {\n  height: 100vh; }\n\n#author-list a {\
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24702,7 +24718,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(94);
+var _LibraryAction = __webpack_require__(88);
+
+var _LibraryAction2 = _interopRequireDefault(_LibraryAction);
+
+__webpack_require__(95);
 
 var _books = __webpack_require__(15);
 
@@ -24729,53 +24749,35 @@ var Author = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Author.__proto__ || Object.getPrototypeOf(Author)).call(this, props));
 
         _this.state = {
-            books: [],
-            authors: []
+            books: "",
+            authors: "",
+            currentAuthor: ""
         };
         _this.getBookId = _this.getBookId.bind(_this);
-        _this.getCurrentAuthor = _this.getCurrentAuthor.bind(_this);
+        _LibraryAction2.default.loadBooks().then(function (data) {
+            return _this.setState({ books: data });
+        });
+        _LibraryAction2.default.loadAuthors().then(function (data) {
+            return _this.setState({ authors: data, currentAuthor: data.find(function (author) {
+                    return author.id == _this.props.match.params.id;
+                }) });
+        });
         return _this;
     }
 
     _createClass(Author, [{
-        key: "componentWillMount",
-        value: function componentWillMount() {
-            var _this2 = this;
-
-            fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                return _this2.setState({ books: data });
-            });
-            fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                return _this2.setState({ authors: data });
-            });
-        }
-    }, {
         key: "getBookId",
         value: function getBookId(bookName) {
-            if (this.state.books == []) return 1;else return this.state.books.find(function (book) {
+            return this.state.books.find(function (book) {
                 return book.name == bookName;
             }).id;
         }
     }, {
-        key: "getCurrentAuthor",
-        value: function getCurrentAuthor() {
-            var _this3 = this;
-
-            if (this.state.authors == []) return {};else return this.state.authors.find(function (author) {
-                return author.id == _this3.props.match.params.id;
-            });
-        }
-    }, {
         key: "render",
         value: function render() {
-            var _this4 = this;
+            var _this2 = this;
 
-            var currentAuthor = this.getCurrentAuthor();
-            return _react2.default.createElement(
+            return this.state.currentAuthor && this.state.books ? _react2.default.createElement(
                 "div",
                 { id: "author" },
                 _react2.default.createElement(
@@ -24805,7 +24807,7 @@ var Author = function (_React$Component) {
                         _react2.default.createElement(
                             "div",
                             { className: "col-6" },
-                            currentAuthor.name
+                            this.state.currentAuthor.name
                         )
                     ),
                     _react2.default.createElement(
@@ -24819,7 +24821,7 @@ var Author = function (_React$Component) {
                         _react2.default.createElement(
                             "div",
                             { className: "col-6" },
-                            currentAuthor.biography
+                            this.state.currentAuthor.biography
                         )
                     ),
                     _react2.default.createElement(
@@ -24833,18 +24835,20 @@ var Author = function (_React$Component) {
                         _react2.default.createElement(
                             "div",
                             { className: "col-6" },
-                            currentAuthor.books.map(function (book) {
+                            this.state.currentAuthor.books.map(function (book) {
                                 return _react2.default.createElement(
                                     "a",
-                                    { className: "pr-3", href: "#book/" + _this4.getBookId(book) },
+                                    { className: "pr-3", href: "#book/" + _this2.getBookId(book) },
                                     book
                                 );
                             })
                         )
-                    ),
-                    _react2.default.createElement("div", { className: "row" }),
-                    _react2.default.createElement("div", { className: "row" })
+                    )
                 )
+            ) : _react2.default.createElement(
+                "div",
+                null,
+                "Loading...."
             );
         }
     }]);
@@ -24855,13 +24859,13 @@ var Author = function (_React$Component) {
 exports.default = Author;
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(95);
+var content = __webpack_require__(96);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24886,7 +24890,7 @@ if(false) {
 }
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(undefined);
@@ -24900,7 +24904,7 @@ exports.push([module.i, "#author {\n  height: 100vh; }\n\n@media screen and (max
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24916,7 +24920,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(97);
+var _LibraryAction = __webpack_require__(88);
+
+var _LibraryAction2 = _interopRequireDefault(_LibraryAction);
+
+__webpack_require__(98);
 
 var _books = __webpack_require__(15);
 
@@ -24943,53 +24951,36 @@ var Book = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Book.__proto__ || Object.getPrototypeOf(Book)).call(this, props));
 
         _this.state = {
-            books: [],
-            authors: []
+            books: "",
+            authors: "",
+            currentBook: ""
         };
         _this.getAuthorId = _this.getAuthorId.bind(_this);
+        _LibraryAction2.default.loadBooks().then(function (data) {
+            return _this.setState({ books: data, currentBook: data.find(function (book) {
+                    return book.id == _this.props.match.params.id;
+                }) });
+        });
+        _LibraryAction2.default.loadAuthors().then(function (data) {
+            return _this.setState({ authors: data });
+        });
 
         return _this;
     }
 
     _createClass(Book, [{
-        key: "componentWillMount",
-        value: function componentWillMount() {
-            var _this2 = this;
-
-            fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                return _this2.setState({ books: data });
-            });
-            fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                return _this2.setState({ authors: data });
-            });
-        }
-    }, {
         key: "getAuthorId",
         value: function getAuthorId(authorName) {
-            if (this.state.authors = []) return 1;else return this.state.authors.find(function (author) {
+            return this.state.authors.find(function (author) {
                 return author.name == authorName;
             }).id;
         }
     }, {
-        key: "getCurrentBook",
-        value: function getCurrentBook() {
-            var _this3 = this;
-
-            if (this.state.books == []) return {};else return this.state.books.find(function (book) {
-                return book.id == _this3.props.match.params.id;
-            });
-        }
-    }, {
         key: "render",
         value: function render() {
-            var _this4 = this;
+            var _this2 = this;
 
-            var currentBook = this.getCurrentBook();
-            return _react2.default.createElement(
+            return this.state.currentBook && this.state.authors ? _react2.default.createElement(
                 "div",
                 { id: "book" },
                 _react2.default.createElement(
@@ -25019,7 +25010,7 @@ var Book = function (_React$Component) {
                         _react2.default.createElement(
                             "div",
                             { className: "col-6" },
-                            currentBook.name
+                            this.state.currentBook.name
                         )
                     ),
                     _react2.default.createElement(
@@ -25033,10 +25024,10 @@ var Book = function (_React$Component) {
                         _react2.default.createElement(
                             "div",
                             { className: "col-6" },
-                            currentBook.authors.map(function (author) {
+                            this.state.currentBook.authors.map(function (author) {
                                 return _react2.default.createElement(
                                     "a",
-                                    { className: "pr-3", href: "#author/" + _this4.getAuthorId(author) },
+                                    { className: "pr-3", href: "#author/" + _this2.getAuthorId(author) },
                                     author
                                 );
                             })
@@ -25055,8 +25046,8 @@ var Book = function (_React$Component) {
                             { className: "col-6" },
                             _react2.default.createElement(
                                 "a",
-                                { href: "#genre/" + currentBook.genre },
-                                currentBook.genre
+                                { href: "#genre/" + this.state.currentBook.genre },
+                                this.state.currentBook.genre
                             )
                         )
                     ),
@@ -25071,11 +25062,15 @@ var Book = function (_React$Component) {
                         _react2.default.createElement(
                             "div",
                             { className: "col-6" },
-                            currentBook.description
+                            this.state.currentBook.description
                         )
                     ),
                     _react2.default.createElement("div", { className: "row" })
                 )
+            ) : _react2.default.createElement(
+                "div",
+                null,
+                "Loading..."
             );
         }
     }]);
@@ -25086,13 +25081,13 @@ var Book = function (_React$Component) {
 exports.default = Book;
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(98);
+var content = __webpack_require__(99);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -25117,7 +25112,7 @@ if(false) {
 }
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(undefined);
@@ -25131,7 +25126,7 @@ exports.push([module.i, "#book {\n  height: 100vh; }\n", ""]);
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25147,7 +25142,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(100);
+var _LibraryAction = __webpack_require__(88);
+
+var _LibraryAction2 = _interopRequireDefault(_LibraryAction);
+
+__webpack_require__(101);
 
 var _books = __webpack_require__(15);
 
@@ -25174,57 +25173,32 @@ var Genre = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Genre.__proto__ || Object.getPrototypeOf(Genre)).call(this, props));
 
         _this.state = {
-            books: [],
-            authors: []
+            books: "",
+            authors: ""
         };
         _this.getAuthorId = _this.getAuthorId.bind(_this);
+        _LibraryAction2.default.loadBooks().then(function (data) {
+            return _this.setState({ books: data });
+        });
+        _LibraryAction2.default.loadAuthors().then(function (data) {
+            return _this.setState({ authors: data });
+        });
         return _this;
     }
 
     _createClass(Genre, [{
-        key: "componentWillMount",
-        value: function componentWillMount() {
-            var _this2 = this;
-
-            fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                return _this2.setState({ books: data });
-            });
-            fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                return _this2.setState({ authors: data });
-            });
-        }
-    }, {
-        key: "getCurrentBooks",
-        value: function getCurrentBooks() {
-            var genre = this.props.match.params.id;
-            if (this.state.books == []) return {};else {
-                var currentbooks = [];
-                for (var i = 0; i < this.state.books.length; i++) {
-                    if (this.state.books[i].genre == genre) {
-                        currentbooks.push(this.state.books[i]);
-                    }
-                }
-                return currentbooks;
-            }
-        }
-    }, {
         key: "getAuthorId",
         value: function getAuthorId(authorName) {
-            if (this.state.authors = []) return 1;else return this.state.authors.find(function (author) {
+            return this.state.authors.find(function (author) {
                 return author.name == authorName;
             }).id;
         }
     }, {
         key: "render",
         value: function render() {
-            var _this3 = this;
+            var _this2 = this;
 
-            var currentBooks = this.getCurrentBooks();
-            return _react2.default.createElement(
+            return this.state.books && this.state.authors ? _react2.default.createElement(
                 "div",
                 { id: "genre" },
                 _react2.default.createElement(
@@ -25244,33 +25218,39 @@ var Genre = function (_React$Component) {
                             "Authors"
                         )
                     ),
-                    currentBooks.map(function (book) {
-                        return _react2.default.createElement(
-                            "div",
-                            { className: "row bg-light mt-2 py-3 " },
-                            _react2.default.createElement(
+                    this.state.books.map(function (book) {
+                        if (book.genre == _this2.props.match.params.id) {
+                            return _react2.default.createElement(
                                 "div",
-                                { className: "col-6 " },
+                                { className: "row bg-light mt-2 py-3 " },
                                 _react2.default.createElement(
-                                    "a",
-                                    { href: "#book/" + book.id },
-                                    book.name
-                                )
-                            ),
-                            _react2.default.createElement(
-                                "div",
-                                { className: "col-6 " },
-                                book.authors.map(function (author) {
-                                    return _react2.default.createElement(
+                                    "div",
+                                    { className: "col-6 " },
+                                    _react2.default.createElement(
                                         "a",
-                                        { id: "author-link", className: "pr-3", href: "#author/" + _this3.getAuthorId(author) },
-                                        author
-                                    );
-                                })
-                            )
-                        );
+                                        { href: "#book/" + book.id },
+                                        book.name
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "col-6 " },
+                                    book.authors.map(function (author) {
+                                        return _react2.default.createElement(
+                                            "a",
+                                            { id: "author-link", className: "pr-3", href: "#author/" + _this2.getAuthorId(author) },
+                                            author
+                                        );
+                                    })
+                                )
+                            );
+                        }
                     })
                 )
+            ) : _react2.default.createElement(
+                "div",
+                null,
+                "Loading..."
             );
         }
     }]);
@@ -25281,13 +25261,13 @@ var Genre = function (_React$Component) {
 exports.default = Genre;
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(101);
+var content = __webpack_require__(102);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -25312,7 +25292,7 @@ if(false) {
 }
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(undefined);
@@ -25326,7 +25306,7 @@ exports.push([module.i, "#genre {\n  height: 100vh; }\n", ""]);
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25342,7 +25322,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(103);
+__webpack_require__(104);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25429,13 +25409,13 @@ var Contacts = function (_React$Component) {
 exports.default = Contacts;
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(104);
+var content = __webpack_require__(105);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -25460,7 +25440,7 @@ if(false) {
 }
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(undefined);
@@ -25474,13 +25454,13 @@ exports.push([module.i, "#contacts .fill {\n  height: 90vh; }\n\n#contacts a {\n
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(106);
+var content = __webpack_require__(107);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -25505,7 +25485,7 @@ if(false) {
 }
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(undefined);

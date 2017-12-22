@@ -1,4 +1,5 @@
 import React from "react";
+import actions from "../LibraryAction.js";
 import "./Author.scss";
 import booksdata from "../books.json";
 import authorsdata from "../authors.json";
@@ -7,30 +8,22 @@ class Author extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            books: [],
-            authors: []
+            books: "",
+            authors: "",
+            currentAuthor: ""
         }
         this.getBookId = this.getBookId.bind(this);
-        this.getCurrentAuthor = this.getCurrentAuthor.bind(this);
+        actions.loadBooks().then(data => this.setState({books: data}));
+        actions.loadAuthors().then(data => this.setState({authors: data, currentAuthor: data.find(author => author.id == this.props.match.params.id)}));
     }
-    componentWillMount() {
-        fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
-        fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(response => response.json()).then(data => this.setState({authors: data})); 
-    }
+    
     getBookId(bookName) {
-        if(this.state.books == []) return 1;
-        else
         return this.state.books.find(book => book.name == bookName).id;
     }
-    getCurrentAuthor(){
-        if(this.state.authors == []) return {};
-        else
-        return this.state.authors.find(author => author.id == this.props.match.params.id);
-    }
+    
     render() {
-        let currentAuthor = this.getCurrentAuthor();
         return(
-            <div id="author">
+           (this.state.currentAuthor && this.state.books) ? <div id="author">
                 <div className="container mt-5">
                     <div className="row text-center">
                         <div className="col-12">
@@ -42,7 +35,7 @@ class Author extends React.Component {
                             Initials
                         </div>
                         <div className="col-6">
-                            {currentAuthor.name}
+                            {this.state.currentAuthor.name}
                         </div>
                     </div>
                     <div className="row py-3">
@@ -50,7 +43,7 @@ class Author extends React.Component {
                             Biography
                         </div>
                         <div className="col-6">
-                            {currentAuthor.biography}
+                            {this.state.currentAuthor.biography}
                         </div>
                     </div>
                     <div className="row py-3">
@@ -59,7 +52,7 @@ class Author extends React.Component {
                         </div>
                         <div className="col-6">
                             {
-                                currentAuthor.books.map(book => 
+                                this.state.currentAuthor.books.map(book => 
                                     <a className="pr-3" href={`#book/${this.getBookId(book)}`}>
                                         {book}
                                     </a>
@@ -67,10 +60,9 @@ class Author extends React.Component {
                             }
                         </div>
                     </div>
-                    <div className="row"></div>
-                    <div className="row"></div>
                 </div>
             </div>
+            : <div>Loading....</div>
         );
     }
 }

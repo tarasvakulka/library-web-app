@@ -1,4 +1,5 @@
 import React from "react";
+import actions from "../LibraryAction.js";
 import "./AuthorList.scss";
 import booksdata from "../books.json";
 import authorsdata from "../authors.json";
@@ -7,24 +8,19 @@ class AuthorList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            books: [],
-            authors: []
+            books: "",
+            authors: ""
         }
         this.getBookId = this.getBookId.bind(this);
-    }
-    componentWillMount() {
-        fetch("https://tarasvakulka.github.io/library-web-app/src/books.json").then(response => response.json()).then(data => this.setState({books: data}));
-        fetch("https://tarasvakulka.github.io/library-web-app/src/authors.json").then(response => response.json()).then(data => this.setState({authors: data}));
-    
-    }
+        actions.loadBooks().then(data => this.setState({books: data}));
+        actions.loadAuthors().then(data => this.setState({authors: data}));
+    }  
     getBookId(bookName) {
-        if(this.state.books == []) return 1;
-        else
         return this.state.books.find(book => book.name == bookName).id;
     }
     render() {
         return(
-            <div id="author-list">
+            (this.state.books && this.state.authors) ? <div id="author-list">
                 <div className="container mt-5">
                     {
                         this.state.authors.map(author => 
@@ -55,6 +51,7 @@ class AuthorList extends React.Component {
                     
                 </div>
             </div>
+            : <div>Loading....</div>
         );
     }
 }
