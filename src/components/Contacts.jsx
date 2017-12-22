@@ -15,7 +15,7 @@ class Contacts extends React.Component {
                                 
                                 <ul className="lead">
                                     <li className="pb-2 pl-5"> Phone: +380 (097) 979 79 79<br/> Address: Ukraine, Kyiv </li>
-                                    <li className="pb-2 pl-5"><img className="pr-2 pb-1" src="./src/images/email_icon.png" alt=""/><a href="mailto:formulakpi@gmail.com" target="_blank">library@gmail.com</a></li>
+                                    <li className="pb-2 pl-5"><img className="pr-2 pb-1" src="./src/images/email_icon.png" alt=""/><a href="mailto:library@gmail.com" target="_blank">library@gmail.com</a></li>
                                     <li className="pb-2 pl-5"><img className="pr-2 pb-1" src="./src/images/site_icon.png" alt=""/><a href="https://tarasvakulka.github.io/library-web-app" target="_blank">tarasvakulka.github.io/library-web-app</a></li>
                                 </ul> 
                             </div>

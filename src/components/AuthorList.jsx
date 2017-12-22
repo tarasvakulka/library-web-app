@@ -1,8 +1,6 @@
 import React from "react";
 import actions from "../LibraryAction.js";
 import "./AuthorList.scss";
-import booksdata from "../books.json";
-import authorsdata from "../authors.json";
 
 class AuthorList extends React.Component {
     constructor(props) {

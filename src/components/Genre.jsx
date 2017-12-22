@@ -1,8 +1,6 @@
 import React from "react";
 import actions from "../LibraryAction.js";
 import "./Genre.scss";
-import booksdata from "../books.json";
-import authorsdata from "../authors.json";
 
 class Genre extends React.Component {
     constructor(props) {
