@@ -26109,7 +26109,7 @@ module.exports = function spread(callback) {
 /* 113 */
 /***/ (function(module, exports) {
 
-module.exports = {"apiPrefix":"http://ec2-18-218-38-70.us-east-2.compute.amazonaws.com"}
+module.exports = {"apiPrefix":"https://lbarary-web-app.azurewebsites.net"}
 
 /***/ }),
 /* 114 */
