@@ -15,7 +15,6 @@ class BookList extends React.Component {
         actions.loadAuthors().then(({data}) => this.setState({authors: data})); 
     }
     getAuthorId(authorName) {
-        console.log(authorName)
         if(this.state.authors.find(author => author.name == authorName)) 
             return this.state.authors.find(author => author.name == authorName).id;
         else 

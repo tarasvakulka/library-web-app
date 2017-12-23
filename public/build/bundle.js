@@ -25133,7 +25133,6 @@ var BookList = function (_React$Component) {
     _createClass(BookList, [{
         key: "getAuthorId",
         value: function getAuthorId(authorName) {
-            console.log(authorName);
             if (this.state.authors.find(function (author) {
                 return author.name == authorName;
             })) return this.state.authors.find(function (author) {
@@ -26110,7 +26109,7 @@ module.exports = function spread(callback) {
 /* 113 */
 /***/ (function(module, exports) {
 
-module.exports = {"apiPrefix":"https://lbarary-web-app.azurewebsites.net"}
+module.exports = {"apiPrefix":"http://ec2-18-218-38-70.us-east-2.compute.amazonaws.com"}
 
 /***/ }),
 /* 114 */
