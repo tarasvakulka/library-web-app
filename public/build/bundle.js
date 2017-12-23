@@ -26110,7 +26110,7 @@ module.exports = function spread(callback) {
 /* 113 */
 /***/ (function(module, exports) {
 
-module.exports = {"apiPrefix":"https://libraryapiweb.azurewebsites.net"}
+module.exports = {"apiPrefix":"https://lbarary-web-app.azurewebsites.net"}
 
 /***/ }),
 /* 114 */
