@@ -9,6 +9,8 @@ import Author from "./Author.jsx";
 import Book from "./Book.jsx";
 import Genre from "./Genre.jsx";
 import Contacts from "./Contacts.jsx";
+import AddBook from "./AddBook.jsx";
+import AddAuthor from "./AddAuthor.jsx";
 
 import "./App.scss";
 
@@ -21,6 +23,8 @@ class App extends React.Component {
                         <Switch>
                             <Route exact path="/" component={BookList}/>
                             <Route path="/authors" component={AuthorList}/>
+                            <Route path="/addbook" component={AddBook}/>
+                            <Route path="/addauthor" component={AddAuthor}/>
                             <Route path="/book/:id" component={Book}/>
                             <Route path="/author/:id" component={Author}/>
                             <Route path="/genre/:id" component={Genre} />

@@ -8,7 +8,9 @@ class Navbar extends React.Component {
     this.state = {
       books_link: "active",
       authors_link: "",
-      contacts_link: ""
+      contacts_link: "",
+      addbook_link: "",
+      addauthor_link: ""
     };
     this.activeHandler = this.activeHandler.bind(this);
   }
@@ -17,7 +19,9 @@ class Navbar extends React.Component {
     this.setState({
       books_link: "",
       authors_link: "",
-      contacts_link: ""});
+      contacts_link: "",
+      addbook_link: "",
+      addauthor_link: "" });
   
     const element = e.target.id;
     this.setState({[element]: "active"});
@@ -39,6 +43,12 @@ class Navbar extends React.Component {
                   </li>
                   <li className="nav-item" >
                     <Link id="authors_link" className={this.state.authors_link + " nav-link"} to='/authors' onClick={this.activeHandler}>Authors </Link>
+                  </li>
+                  <li className="nav-item" >
+                    <Link id="addbook_link" className={this.state.addbook_link + " nav-link"} to='/addbook' onClick={this.activeHandler}>Add Book </Link>
+                  </li>
+                  <li className="nav-item" >
+                    <Link id="addauthor_link" className={this.state.addauthor_link + " nav-link"} to='/addauthor' onClick={this.activeHandler}>Add Author </Link>
                   </li>
                   <li className="nav-item" >
                     <Link id="contacts_link" className={this.state.contacts_link + " nav-link"} to='/contacts' onClick={this.activeHandler}>Contacts </Link>

@@ -1,5 +1,5 @@
 import React from "react";
-import actions from "../LibraryAction.js";
+import actions from "../api/LibraryAction.js";
 import "./BookList.scss";
 
 class BookList extends React.Component {
@@ -10,12 +10,21 @@ class BookList extends React.Component {
             authors: ""
         }
         this.getAuthorId = this.getAuthorId.bind(this);
-        actions.loadBooks().then(data => this.setState({books: data}));
-        actions.loadAuthors().then(data => this.setState({authors: data})); 
+        this.handleDeleteBook = this.handleDeleteBook.bind(this);
+        actions.loadBooks().then(({data}) => this.setState({books: data}));
+        actions.loadAuthors().then(({data}) => this.setState({authors: data})); 
     }
     getAuthorId(authorName) {
-        return this.state.authors.find(author => author.name == authorName).id;
+        console.log(authorName)
+        if(this.state.authors.find(author => author.name == authorName)) 
+            return this.state.authors.find(author => author.name == authorName).id;
+        else 
+            return 0;
     }
+    handleDeleteBook(e) {
+        actions.deleteBook();
+        window.location.reload();
+    } 
     render() {
     
         return(
@@ -43,9 +52,10 @@ class BookList extends React.Component {
                                 </div>
                             )
                         }
+                        <button className="btn btn-dark float-right mt-3" onClick={this.handleDeleteBook}>Delete end item</button>
                 </div>
             </div>
-            : <div>Loading...</div>
+            : <div className="fill" >Loading...</div>
         );
     }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import actions from "../LibraryAction.js";
+import actions from "../api/LibraryAction.js";
 import "./Author.scss";
 
 class Author extends React.Component {
@@ -11,14 +11,15 @@ class Author extends React.Component {
             currentAuthor: ""
         }
         this.getBookId = this.getBookId.bind(this);
-        actions.loadBooks().then(data => this.setState({books: data}));
-        actions.loadAuthors().then(data => this.setState({authors: data, currentAuthor: data.find(author => author.id == this.props.match.params.id)}));
+        actions.loadBooks().then(({data}) => this.setState({books: data}));
+        actions.loadAuthors().then(({data}) => this.setState({authors: data, currentAuthor: data.find(author => author.id == this.props.match.params.id)}));
     }
-    
     getBookId(bookName) {
-        return this.state.books.find(book => book.name == bookName).id;
+        if(this.state.books.find(book => book.name == bookName))
+            return this.state.books.find(book => book.name == bookName).id;
+        else
+            return 0;
     }
-    
     render() {
         return(
            (this.state.currentAuthor && this.state.books) ? <div id="author">
@@ -60,7 +61,7 @@ class Author extends React.Component {
                     </div>
                 </div>
             </div>
-            : <div>Loading....</div>
+            : <div className="fill">Loading....</div>
         );
     }
 }

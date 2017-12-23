@@ -1,5 +1,5 @@
 import React from "react";
-import actions from "../LibraryAction.js";
+import actions from "../api/LibraryAction.js";
 import "./Genre.scss";
 
 class Genre extends React.Component {
@@ -10,12 +10,14 @@ class Genre extends React.Component {
             authors: ""
         }
         this.getAuthorId = this.getAuthorId.bind(this);
-        actions.loadBooks().then(data => this.setState({books: data}));
-        actions.loadAuthors().then(data => this.setState({authors: data}));
+        actions.loadBooks().then(({data}) => this.setState({books: data}));
+        actions.loadAuthors().then(({data}) => this.setState({authors: data}));
     }
-    
     getAuthorId(authorName) {
-        return this.state.authors.find(author => author.name == authorName).id;
+        if(this.state.authors.find(author => author.name == authorName))
+            return this.state.authors.find(author => author.name == authorName).id;
+        else 
+            return 0;
     }
     render() {
         return(
@@ -49,7 +51,7 @@ class Genre extends React.Component {
                         }
                 </div>
             </div>
-            : <div>Loading...</div>
+            : <div className="fill" >Loading...</div>
         );
     }
 }
