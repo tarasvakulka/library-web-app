@@ -15,7 +15,6 @@ const actions = {
         axios.post(`${apiPrefix}/authors`, data);
     },
     deleteBook(bookId) {
-        console.log(bookId);
         axios.delete(`${apiPrefix}/book`);
     },
     deleteAuthor(authorId) {

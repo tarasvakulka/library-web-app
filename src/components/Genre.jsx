@@ -23,7 +23,10 @@ class Genre extends React.Component {
         return(
            (this.state.books && this.state.authors) ? <div id="genre">
                 <div className="container">
-                        <div className="row text-center h5 mt-4">
+                        <div className="row text-center mt-4 lead text-uppercase">
+                            <div className="col-12">{this.props.match.params.id}</div>
+                        </div>
+                        <div className="row mt-2 text-center h5 ">
                             <div className="col-6 py-2 ">Book</div>
                             <div className="col-6 pt-2">Authors</div>
                         </div>

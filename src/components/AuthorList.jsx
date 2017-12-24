@@ -22,7 +22,9 @@ class AuthorList extends React.Component {
     }
     handleDeleteAuthor() {
         actions.deleteAuthor();
-        window.location.reload();
+        this.state.authors.pop();
+        console.log(this.state.authors);
+        this.setState({authors: this.state.authors});
     }
     render() {
         return(

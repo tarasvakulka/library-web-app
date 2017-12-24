@@ -1269,7 +1269,6 @@ var actions = {
         _axios2.default.post(_config.apiPrefix + "/authors", data);
     },
     deleteBook: function deleteBook(bookId) {
-        console.log(bookId);
         _axios2.default.delete(_config.apiPrefix + "/book");
     },
     deleteAuthor: function deleteAuthor(authorId) {
@@ -25143,7 +25142,9 @@ var BookList = function (_React$Component) {
         key: "handleDeleteBook",
         value: function handleDeleteBook(e) {
             _LibraryAction2.default.deleteBook();
-            window.location.reload();
+            this.state.books.pop();
+            console.log(this.state.books);
+            this.setState({ books: this.state.books });
         }
     }, {
         key: "render",
@@ -26225,7 +26226,9 @@ var AuthorList = function (_React$Component) {
         key: "handleDeleteAuthor",
         value: function handleDeleteAuthor() {
             _LibraryAction2.default.deleteAuthor();
-            window.location.reload();
+            this.state.authors.pop();
+            console.log(this.state.authors);
+            this.setState({ authors: this.state.authors });
         }
     }, {
         key: "render",
@@ -26831,7 +26834,16 @@ var Genre = function (_React$Component) {
                     { className: "container" },
                     _react2.default.createElement(
                         "div",
-                        { className: "row text-center h5 mt-4" },
+                        { className: "row text-center mt-4 lead text-uppercase" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "col-12" },
+                            this.props.match.params.id
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "row mt-2 text-center h5 " },
                         _react2.default.createElement(
                             "div",
                             { className: "col-6 py-2 " },

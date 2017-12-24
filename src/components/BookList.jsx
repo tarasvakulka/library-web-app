@@ -22,7 +22,10 @@ class BookList extends React.Component {
     }
     handleDeleteBook(e) {
         actions.deleteBook();
-        window.location.reload();
+        this.state.books.pop();
+        console.log(this.state.books);
+        this.setState({books: this.state.books});
+        
     } 
     render() {
     
